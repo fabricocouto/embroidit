@@ -155,6 +155,8 @@ public class FormatPES
         try
         {
             this.fileStream.seek(this.pecStart + 532);
+            // corret offset is 528
+             this.fileStream.seek(this.pecStart + 528);
             PECDecoder.getInstance().readStitches(this.pattern, this.fileStream);
         }
         catch(IOException e)
